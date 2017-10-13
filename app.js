@@ -15,7 +15,7 @@ function calcCust(min,max){
     var avcook = rannum * 6.3;
     firstnPike.avcookyperhour.push(avcook);
     console.log('The random # of people is ' + firstnPike.hourandCust[j]);
-    console.log(' The average # of cookies needed per  hour  is ' + avcook);
+    console.log(' The average # of cookies needed per hour is ' + avcook);
     j++;
 
   }
