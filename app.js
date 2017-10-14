@@ -1,5 +1,6 @@
 'use strict';
-console.log('hello owner beth...');
+
+console.log('Hello owner Pat...');
 var store1 = {
   name: 'First and Pike',
   minCust: 23,
