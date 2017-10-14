@@ -1,6 +1,7 @@
 'use strict';
-console.log('hello');
-var firstnPike = {
+console.log('hello owner beth...');
+var store1 = {
+  name: 'First and Pike',
   minCust: 23,
   maxCust: 65,
   avgCookieSale: 6.3,
@@ -10,12 +11,13 @@ var firstnPike = {
 var j = 0;
 function calcCust(min,max){
   while (j < 15) {
-    var rannum = Math.floor(Math.random() * (max - min + 1) + min);
-    firstnPike.hourandCust.push(rannum);
+    var rannum = (Math.floor(Math.random() * (max - min + 1) + min)).toFixed(2);
+    store1.hourandCust.push(rannum);
     var avcook = rannum * 6.3;
-    firstnPike.avcookyperhour.push(avcook);
-    console.log('The random # of people is ' + firstnPike.hourandCust[j]);
-    console.log(' The average # of cookies needed per hour is ' + avcook);
+    var hour = 1 + j;
+    store1.avcookyperhour.push(avcook);
+    console.log('The random # of people is ' + store1.hourandCust[j]);
+    console.log(' The average # of cookies needed for hour ' + hour + ' is ' + avcook);
     j++;
 
   }
