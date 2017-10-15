@@ -1,16 +1,14 @@
- ?/*reset*/
-{
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+ /*reset*/
+ {
+  font-family: times;
+  background-color: rgb(122,145,141);
 }
 
-html, body {
-  height: 100%;
-  h1 {
-    color: blue
-}
 h1 {
-  color: blue
+  color: green;
+  font-family: cursive;
+  ;
+}
+h2 {
+  color: rgb(197, 237, 172);
 }
