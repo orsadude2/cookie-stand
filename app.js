@@ -31,19 +31,19 @@ function calcCust(min,max){
 }
 calcCust(23, 65);
 
-// render: function() {
-//   var firstandpike = document.getElementByID('FirstandPike');
-//   var store1 = document.getElementByID('store1');
-//
-//   var h2El = document.createElement('h2');
-//   h2El.textContent = this.name;
-//   store1.appendChild(h2El);
-//   for(var k =0; k < storeHour.length;k++){
-//     var liEL = document.createElement('li');
-//     liEL.textContent = storeHour[k] + ': ' + this.avcookysoldperhour[k] + ' cookies';
-//     console.log(liEL);
-//     firstandpike.appendChild(liEL);
-//   }
-// }
-// };
-// firstandpike.render();
+render: function() {
+  var firstandpike = document.getElementByID('FirstandPike');
+  var store1 = document.getElementByID('store1');
+
+  var h2El = document.createElement('h2');
+  h2El.textContent = this.name;
+  store1.appendChild(h2El);
+  for(var k =0; k < storeHour.length;k++){
+    var liEL = document.createElement('li');
+    liEL.textContent = storeHour[k] + ': ' + this.avcookysoldperhour[k] + ' cookies';
+    console.log(liEL);
+    firstandpike.appendChild(liEL);
+  }
+}
+};
+firstandpike.render();
