@@ -102,47 +102,5 @@ function calcCust(store) {
 
   }
 }
-// create a function renderStore to pass the DIV, H2 and List headings to the HTML. First it creates all of the elements
-// Next it creates a text and entry variable. The text variable is the placeholder for the iteration of the store hour
-// and total number of cookies for that hour. The entry variable is the place holder for text information to be stored
-// in the list format
-function renderStore(store) {
-  var container = cre('div');
-  var title = cre('h2', store.name);
+;
 
-  var list = cre('ul');
-
-  for (var i = 0; i < storeHour.length; i++) {
-    var text = storeHour[i] + ': ' + Math.ceil(store.totalCookys[i]) + ' coookies';
-    var entry = cre('li', text);
-    list.appendChild(entry);
-  }
-
-  container.appendChild(title);
-  container.appendChild(list);
-
-  document.body.appendChild(container);
-}
-
-function cre(name, children) {
-
-  var el = document.createElement(name);
-
-  if (children) {
-    if (typeof children === 'string') {
-      var child = document.createTextNode(children);
-      el.appendChild(child);
-    } else {
-      for (var i = 0; i < children.length; i++) {
-        el.appendChild(children[i]);
-      }
-    }
-  }
-
-  return el;
-}
-
-stores.forEach(calcCust);
-stores.forEach(renderStore);
-
-console.log(stores);
