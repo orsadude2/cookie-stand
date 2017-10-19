@@ -141,3 +141,8 @@ function cre(name, children) {
 
   return el;
 }
+
+stores.forEach(calcCust);
+stores.forEach(renderStore);
+
+console.log(stores);
