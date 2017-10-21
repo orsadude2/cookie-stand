@@ -1,14 +1,33 @@
  /*reset*/
  {
-  font-family: times;
-  background-color: rgb(122,145,141);
+body font-family: times;
+background-color: blue;
 }
 
-h1 {
-  color: green;
-  font-family: cursive;
-  ;
+form {
+  display: table;
+  margin: auto;
 }
-h2 {
-  color: rgb(197, 237, 172);
+form div {
+  display: table-row;
+}
+form label, form input {
+  display: table-cell;
+  margin-bottom: 25px;
+}
+form label {
+  width: 50px;
+  padding-right: 0%;
+  text-align: right;
+}
+form input {
+  width: 300px;
+
+}
+form p {
+  display: table-caption;
+  caption-side: bottom;
+  width: 300px;
+  color: #999;
+  font-style: italic;
 }

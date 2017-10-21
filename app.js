@@ -85,26 +85,6 @@ function calcCust(store) {
   }
   store.dailycookie = sum;
 }
-<<<<<<< HEAD
-calcCust(23, 65);
-
-render: function() {
-  var firstandpike = document.getElementByID('FirstandPike');
-  var store1 = document.getElementByID('store1');
-
-  var h2El = document.createElement('h2');
-  h2El.textContent = this.name;
-  store1.appendChild(h2El);
-  for(var k =0; k < storeHour.length;k++){
-    var liEL = document.createElement('li');
-    liEL.textContent = storeHour[k] + ': ' + this.avcookysoldperhour[k] + ' cookies';
-    console.log(liEL);
-    firstandpike.appendChild(liEL);
-  }
-}
-};
-firstandpike.render();
-=======
 var container = document.getElementById('sales');
 
 var makeStore = function(store) {
@@ -137,4 +117,3 @@ calcCust(stores[3]);
 makeStore(stores[3]);
 calcCust(stores[4]);
 makeStore(stores[4]);
->>>>>>> aaca0555e5346e3ef19ae635a4bc4a152ff3961b
