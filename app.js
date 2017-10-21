@@ -96,7 +96,7 @@ function calcCust(store) {
     console.log('The random # of people is ' + store.rndhourandCust[j]);
     console.log(' The average # of cookies needed for ' + storeHour[j] + ' is ' + avcookysoldperhour);
     console.log(' total # of cookies so far is ' + sum);
-    console.log('                 ');
+    console.log('--------------');
 
     j++;
 
@@ -117,17 +117,18 @@ function renderStore(store) {
     var entry = cre('li', text);
     list.appendChild(entry);
   }
+  // Using container to hold the create Div pointer, then appending the title contents (h2 and the store name to it)
 
   container.appendChild(title);
   container.appendChild(list);
-
+  // Bring in all of the objects within container and appends it to entire body space
   document.body.appendChild(container);
 }
-
+// with help from the JS meetup group, learned to use the create function to pass information that allows the creation of the store names
 function cre(name, children) {
 
   var el = document.createElement(name);
-
+  // this if cycles through checking whether the second  passed in valu (children) is text
   if (children) {
     if (typeof children === 'string') {
       var child = document.createTextNode(children);
