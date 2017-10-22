@@ -1,6 +1,5 @@
- /*reset*/
- * {
-  margin: 0;
+* {
+  margin:0;
   box-sizing: border-box;
 }
 
@@ -22,22 +21,26 @@ div {
 
 .left-menu, .main-content, .right-pane {
   height: 1000px;
+  float: left;
+  margin-top: 150px;
 }
 
 .main-content {
   margin-top: 150px;
+  width: 50%;
   background-color: lightgreen;
 }
 
-
-.left-menu{
+.left-menu {
   float: left;
   background-color: darkblue;
-  width: 75px;
+  width: 25%;
+  /*width: 100px;*/
 }
 
-.right-pane{
+.right-pane {
   float: right;
   background-color: pink;
-  width: 150px;
+  width: 25%;
+  /*width: 150px;*/
 }
