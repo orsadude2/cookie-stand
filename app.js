@@ -1,6 +1,7 @@
 'use strict';
 
 var totalCookys = [];
+var allLocations = [];
 
 function CreateNewStore (name, minCust, maxCust, avgCookieSale) {
   this.name = name;
@@ -68,10 +69,10 @@ stores.push(alki);
 console.log('before calc cust is run ' + stores[0].dailycookie);
 stores[0].calcCust();
 console.log('after calc cust is run ' + stores[0].dailycookie);
-// console.log(stores);
+console.log(stores);
 
-var thead = document.getElementById('thead');
 function createheader() {
+  var thead = document.getElementById('thead');
   var trow = document.createElement('tr');
   for (var i = 0; i < storeHour.length;i++) {
     var tdata = document.createElement('td');
@@ -83,6 +84,18 @@ function createheader() {
 }
 createheader();
 
+function createbody() {
+  var tbody = document.getElementById('tbody');
+  var trow = document.createElement('tr');
+  for (var i = 0; i < storeHour.length;i++) {
+    var tdata = document.createElement('td');
+    var text = document.createTextNode(avcookysoldperhour[i]);
+    tdata.appendChild(text);
+    trow.appendChild(tdata);
+  }
+  thead.appendChild(trow);
+}
+createbody();
 // var container = document.getElementById('sales');
 //
 // var makeStore = function(store) {
