@@ -96,35 +96,3 @@ function createbody() {
   thead.appendChild(trow);
 }
 createbody();
-// var container = document.getElementById('sales');
-//
-// var makeStore = function(store) {
-//
-//   var storeUL = document.createElement('ul');
-//   container.appendChild(storeUL);
-//
-//   var storeName = document.createElement('li');
-//   storeName.textContent = store.name;
-//   storeUL.appendChild(storeName);
-//
-//   for (var i = 0; i < store.avcookysoldperhour.length; i++) {
-//     var storeName = document.createElement('li');
-//     storeName.textContent = storeHour[i] + ':' + store.totalCookys[i];
-//     console.log(storeName);
-//     storeUL.appendChild(storeName);
-//   }
-//
-//   var dailyCookieEl = document.createElement('li');
-//   dailyCookieEl.textContent = 'Total: ' + store.dailycookie;
-//   storeUL.appendChild(dailyCookieEl);
-// };
-// calcCust(stores[0]);
-// makeStore(stores[0]);
-// calcCust(stores[1]);
-// makeStore(stores[1]);
-// calcCust(stores[2]);
-// makeStore(stores[2]);
-// calcCust(stores[3]);
-// makeStore(stores[3]);
-// calcCust(stores[4]);
-// makeStore(stores[4]);
