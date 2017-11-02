@@ -1,49 +1,98 @@
-// 'use strict';
-//
+'use strict';
+
+var totalCookys = [];
+var allLocations = [];
+
+function CreateNewStore (name, minCust, maxCust, avgCookieSale) {
+  this.name = name;
+  this.minCust = minCust;
+  this.maxCust = maxCust;
+  this.avgCookieSale = avgCookieSale;
+  this.rndhourandCust = [];
+  this.avcookysoldperhour = [];
+  this.dailycookie = 0;
+  this.calcCust = function() {
+    var j = 0;
+    var sum = j;
+
+    while (j < 15) {
+      var rannum = Math.random() * (this.maxCust - this.minCust + 1) + this.minCust;
+      this.avcookysoldperhour.push(Math.floor(rannum * this.avgCookieSale));
+      var hour = 1 + j;
+
+      this.rndhourandCust.push(rannum);
+      totalCookys.push(this.avcookysoldperhour);
+      sum = sum + this.avcookysoldperhour[j];
+
+      j++;
+    }
+    this.dailycookie = sum;
+  };
+}
+
+// var alki = new CreateNewStore ('Alki', 4, 43, 5);
+// console.log (alki.name);
+
 // console.log('Hello owner Pat...');
-// var storeHour = ['6:00 am','7:00 am','8:00 am','9:00 am','10:00 am','11:00 am','12:00 pm','1:00 pm','2:00 pm','3:00 pm','4:00 pm','5:00 pm','6:00 pm','7:00 pm','8:00 pm]'];
-// var store1 = {
-//   name: 'First and Pike',
-//   minCust: 23,
-//   maxCust: 65,
-//   avgCookieSale: 6.3,
-//   rndhourandCust: [ ],
-//   avcookysoldperhour: [ ],
-//   totalCookys: [ ],
-// };
-// var j = 0;
-// var sum = j;
-// function calcCust(min,max){
-//   while (j < 15) {
-//     var rannum = (Math.floor(Math.random() * (max - min + 1) + min)).toFixed(2);
-//     store1.rndhourandCust.push(rannum);
-//     var avcookysoldperhour = rannum * 6.3;
-//     var hour = 1 + j;
-//     store1.avcookysoldperhour.push(avcookysoldperhour);
-//     store1.totalCookys.push(avcookysoldperhour);
-//     sum = sum + store1.avcookysoldperhour[j];
-//     console.log('The random # of people is ' + store1.rndhourandCust[j]);
-//     console.log(' The average # of cookies needed for ' + storeHour[j] + ' is ' + avcookysoldperhour);
-//     console.log(' total # of cookies so far is ' + sum.toFixed(2));
-//     j++;
-//
-//   }
-// }
-// calcCust(23, 65);
-//
-// render: function() {
-//   var firstandpike = document.getElementByID('FirstandPike');
-//   var store1 = document.getElementByID('store1');
-//
-//   var h2El = document.createElement('h2');
-//   h2El.textContent = this.name;
-//   store1.appendChild(h2El);
-//   for(var k =0; k < storeHour.length;k++){
-//     var liEL = document.createElement('li');
-//     liEL.textContent = storeHour[k] + ': ' + this.avcookysoldperhour[k] + ' cookies';
-//     console.log(liEL);
-//     firstandpike.appendChild(liEL);
-//   }
-// }
-// };
-// firstandpike.render();
+var storeHour = [
+  '',
+  '6:00 am',
+  '7:00 am',
+  '8:00 am',
+  '9:00 am',
+  '10:00 am',
+  '11:00 am',
+  '12:00 pm',
+  '1:00 pm',
+  '2:00 pm',
+  '3:00 pm',
+  '4:00 pm',
+  '5:00 pm',
+  '6:00 pm',
+  '7:00 pm',
+  '8:00 pm',
+  'Daily Total'
+];
+
+var stores = [];
+var firstAndPike = new CreateNewStore ('1st and Pike', 23, 65, 6.3);
+stores.push(firstAndPike);
+var seaTac = new CreateNewStore ('SeaTac Airport', 3, 24, 1.2);
+stores.push(seaTac);
+var seattlecenter = new CreateNewStore ('Seattle Center', 11, 38, 3.7);
+stores.push(seattlecenter);
+var capitolhill = new CreateNewStore ('Capitol Hill', 20, 38, 2.3);
+stores.push(capitolhill);
+var alki = new CreateNewStore ('Alki', 2, 16, 4.6);
+stores.push(alki);
+
+console.log('before calc cust is run ' + stores[0].dailycookie);
+stores[0].calcCust();
+console.log('after calc cust is run ' + stores[0].dailycookie);
+console.log(stores);
+
+function createheader() {
+  var thead = document.getElementById('thead');
+  var trow = document.createElement('tr');
+  for (var i = 0; i < storeHour.length;i++) {
+    var tdata = document.createElement('td');
+    var text = document.createTextNode(storeHour[i]);
+    tdata.appendChild(text);
+    trow.appendChild(tdata);
+  }
+  thead.appendChild(trow);
+}
+createheader();
+
+function createbody() {
+  var tbody = document.getElementById('tbody');
+  var trow = document.createElement('tr');
+  for (var i = 0; i < storeHour.length;i++) {
+    var tdata = document.createElement('td');
+    var text = document.createTextNode(avcookysoldperhour[i]);
+    tdata.appendChild(text);
+    trow.appendChild(tdata);
+  }
+  thead.appendChild(trow);
+}
+createbody();
